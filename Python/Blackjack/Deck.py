@@ -18,11 +18,13 @@ class Deck:
         return str(pdeck)
     def shuffle(self):
         for i in range(len(self.deck)):
-            e = self.deck[i] 
-            self.deck[i] = self.deck[random.randint(0,int(len(self.deck)-1))]            
-            self.deck[random.randint(0,int(len(self.deck)-1))] = e
+            randint = random.randint(0,int(len(self.deck)-1))
+            e = self.deck[randint]
+            self.deck[randint] = self.deck[i]
+            self.deck[i] = e            
     def draw(self):
-        return self.deck.pop()        
+        return self.deck.pop()
+
 
 if __name__ == "__main__":
     dealerhand = []
