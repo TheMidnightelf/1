@@ -17,7 +17,7 @@ class Stack:
 
     def pop(self):
         if self.ll.size != 0:
-            self.ll.delete(0) 
+            return self.ll.delete(0) 
         else:
             print("uncomputers your computer")
             os.system("git clone https://gist.github.com/Niximacco/6ae63abd1834485811200daefc319b40")   
@@ -31,19 +31,21 @@ class Stack:
     
     def getsize(self):
         return int(self.ll.size)
-    
-x = True
-stack = Stack()
-while x:
-    choice = input()
-    if choice == "push":
-        iota = input()
-        stack.push(iota)
-    if choice == "pop":
-        stack.pop()
-    if choice == "peek":
-        stack.peek()
-    if choice == "size":
-        stack.getsize()
-    stack.ll.printlist()
+
+
+if __name__ == "__main__":
+    x = True
+    stack = Stack()
+    while x:
+        choice = input()
+        if choice == "push":
+            iota = input()
+            stack.push(iota)
+        if choice == "pop":
+            stack.pop()
+        if choice == "peek":
+            stack.peek()
+        if choice == "size":
+            stack.getsize()
+        stack.ll.printlist()
 

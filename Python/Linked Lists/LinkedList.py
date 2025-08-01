@@ -66,18 +66,20 @@ class LinkedList:
         #     print(nodebefore)
     
     def delete(self,pos):
-        nodebefore = self.headnode
         if pos == 0:
+            ijok = self.headnode.data
             self.headnode = self.headnode.getlink()
-        else:
+        else:        
+            nodebefore = self.headnode
             for i in range(pos-1):
                 nodebefore = nodebefore.getlink()
             nodeafter = nodebefore.getlink()
             nodeafterer = nodeafter.getlink()
+            ijok = nodeafter.data
             del nodeafter
             nodebefore.addlink(nodeafterer)
         self.size -= 1
-        
+        return ijok
 
 if __name__ == "__main__":
     list = LinkedList()
